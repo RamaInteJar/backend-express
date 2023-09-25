@@ -1,7 +1,7 @@
 require("dotenv").config()
 const express = require('express')
 const app = express()
-// const bookmarkedController = require('./controller/bookmarkedController')
+const bookmarkController = require('./controllers/bookmarkController')
 const PORT = process.env.PORT || 7050
 const morgan = require('morgan')
 
@@ -9,5 +9,5 @@ const morgan = require('morgan')
 app.use(morgan('tiny'))
 app.use(express.urlencoded({extended: true}))
 
-// app.use('/bookmark', bookmarkedController)
+app.use('/bookmark', bookmarkController)
 app.listen(PORT, () => console.log('hello from the server side', PORT))
