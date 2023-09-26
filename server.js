@@ -10,6 +10,6 @@ const cors = require("cors")
 app.use(cors()) //this allow the frontend to acess data from the backend
 app.use(morgan('tiny'))
 app.use(express.urlencoded({extended: true}))
-
+app.use(express.json())
 app.use('/bookmark', bookmarkController)
 app.listen(PORT, () => console.log('hello from the server side', PORT))

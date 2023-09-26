@@ -16,6 +16,7 @@ router.get("/", async(req, res)=>{
 
 //CREATE and send data to the database 
 router.post("/", async (req, res) => {
+  console.log(req.body);
   try {
     res.json(await Bookmark.create(req.body));
   } catch (error) {
